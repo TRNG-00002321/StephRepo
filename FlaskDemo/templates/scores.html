@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scores</title>
+</head>
+<body>
+
+    <ul>
+        {% for subject, grades in class_grades.items() %}
+            <li>
+                <strong>{{ subject }}</strong>:
+                {% for g in grades %}
+                    {{ g }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
