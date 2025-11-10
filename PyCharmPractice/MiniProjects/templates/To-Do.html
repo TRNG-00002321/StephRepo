@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Manager</title>
+</head>
+<body>
+    <h1>This is the Home Page!</h1>
+    <button onclick="window.location='http://localhost:63342/PyCharmPractice/MiniProjects/templates/Create.html'">Create Task</button>
+    <button onclick="window.location='http://localhost:63342/PyCharmPractice/MiniProjects/templates/To-Do.html'">Home</button>
+
+    {% if tasks %}
+        <ul>
+            {% for t in tasks %}
+                <li>
+                    <span class="{{ 'completed' if t.completed else '' }}">
+                        [{{ 'x' if t.completed else ' ' }}] {{ t.id }}: {{ t.title }}
+                    </span>
+                    {% if t.note %}
+                        <div><em>note:</em> {{ t.note }}</div>
+                    {% endif %}
+                </li>
+        </ul>
+    {% else %}
+        <p> No Tasks in your list.</p>
+    {% endif %}
+
+
+</body>
+</html>

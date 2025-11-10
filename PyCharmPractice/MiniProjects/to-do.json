@@ -1,7 +1,17 @@
 {
-    "1": {
-        "completed": true,
-        "note": "go do dishes",
-        "title": "Dishes"
+    "2": {
+        "completed": false,
+        "note": "do the laundry",
+        "title": "Laundry"
+    },
+    "3": {
+        "completed": false,
+        "note": "",
+        "title": "Groceries"
+    },
+    "4": {
+        "completed": false,
+        "note": "Get that bread",
+        "title": "Lands"
     }
 }
