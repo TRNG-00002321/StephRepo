@@ -1,3 +1,5 @@
+package com.revature.day03;
+
 import java.util.Scanner;
 
 public class ScannerDemo

@@ -1,3 +1,5 @@
+package com.revature.day03;
+
 public class AsterickStairs
 {
     public static void main(String[] args)

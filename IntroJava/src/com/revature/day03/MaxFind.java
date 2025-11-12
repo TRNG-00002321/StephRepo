@@ -1,3 +1,5 @@
+package com.revature.day03;
+
 public class MaxFind
 {
     public static void main(String[] args)
