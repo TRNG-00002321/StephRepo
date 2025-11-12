@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0129b0a-e64f-4b43-b602-117df5af7253" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FlaskDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PyCharmPractice/MiniProjects/To-DoFlaskified.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PyCharmPractice/MiniProjects/templates/To-Do.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03Form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/03Form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/helloname.py" beforeDir="false" afterPath="$PROJECT_DIR$/helloname.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PyCharmPractice/MiniProjects/To-DoList.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PyCharmPractice/MiniProjects/To-DoList.py" afterDir="false" />
-    </list>
+    <list default="true" id="f0129b0a-e64f-4b43-b602-117df5af7253" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,6 +80,7 @@
       <updated>1762787335286</updated>
       <workItem from="1762787336317" duration="14157000" />
       <workItem from="1762807336371" duration="398000" />
+      <workItem from="1762810033795" duration="2851000" />
     </task>
     <servers />
   </component>
