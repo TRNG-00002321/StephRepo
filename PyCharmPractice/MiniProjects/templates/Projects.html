@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Manager</title>
+</head>
+<body>
+    <button onclick="window.location='{{url_for('home')}}'">Home</button>
+    <button onclick="window.location='{{url_for('projects')}}'">Projects</button>
+    <button onclick="window.location='{{url_for('contact')}}'">Contact</button>
+<h1>This is the Projects Page!</h1>
+
+    {% if tasks %}
+    <ul>
+        {% for t in tasks %}
+            <li>
+                <span class="{{ 'completed' if t['completed'] else '' }}">
+                    [{{ 'x' if t['completed'] else ' ' }}] {{ t['id'] }}: {{ t['title'] }}
+                </span>
+                {% if t['note'] %}
+                    <div><em>note:</em> {{ t['note'] }}</div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Tasks in your list.</p>
+{% endif %}
+
+
+</body>
+</html>

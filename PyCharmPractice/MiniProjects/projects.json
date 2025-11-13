@@ -1,0 +1,27 @@
+{
+    "1": {
+        "completed": false,
+        "note": "make a to do list and take inputs from the command line",
+        "title": "To Do List"
+    },
+    "2": {
+        "completed": false,
+        "note": "Same to do list but try to use Flask and make CRUD methods",
+        "title": "To Do List Flaskified"
+    },
+    "3": {
+        "completed": false,
+        "note": "Takes in user input for drink choice and money inserted. (in coins)",
+        "title": "Vending Machine"
+    },
+    "4": {
+        "completed": false,
+        "note": "Make a small quiz with command line input",
+        "title": "Quiz Application"
+    },
+    "5": {
+        "completed": false,
+        "note": "This website",
+        "title": "Portfolio Website"
+    }
+}

@@ -8,16 +8,16 @@ quiz = {
 }
 
 answers = {}
+correctScore =0;
 for key, value in quiz.items():
     for key2, value2 in value.items():
         #print(str(key) + ": " + str(key2))
         answers[key] = input(str(key) + ": " + str(key2) + " ")
+        if answers[key].lower() == value2.lower():
+            correctScore += 1
 
 
-correctScore =0;
-for key, value in answers.items():
-    if value in quiz:
-        correctScore += 1;
 
 
-print(correctScore)
+
+print("You got " + correctScore + " correct!")
