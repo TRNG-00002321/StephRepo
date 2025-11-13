@@ -8,7 +8,7 @@ Functions:
 - dictionary uses key pairs with ids for each task
 - safe file creation & error handling
 """
-from flask import Flask, redirect, request, render_template
+from flask import Flask, redirect, request, render_template, url_for
 import json
 import os
 
@@ -178,22 +178,27 @@ def home():
     return render_template("To-Do.html", tasks=tasks)
     return "This is the home page."
 
-@app.route("/create", methods=['GET', 'POST'])
-def create_task():
-    if request.method == 'POST':
-        title = request.form['title']
-        note = request.form['notes']
-        if note == '':
+@app.route("/create")
+def create_screne():
+    return render_template("Create.html")
+
+@app.route("/add", methods=["GET", "POST"])
+def add_task():
+    if request.method == "POST":
+        title = request.form["title"]
+        note = request.form.get("note", "")  # safer access
+
+        if note == "":
             nid = create(DEFAULT_FILE, title)
-            print(f"Added task id {nid}.")
-            return redirect('http://localhost:63342/PyCharmPractice/MiniProjects/templates/To-Do.html')
         else:
-            nid = create("to-do.json", title,note)
-            print(f"Added task id {nid}.") #nid
-            return redirect('http://localhost:63342/PyCharmPractice/MiniProjects/templates/To-Do.html')
-    else:
-        username = request.args.get('nm')
-        return 'Meowdy %s!' % username
+            nid = create(DEFAULT_FILE, title, note)
+
+        print(f"Added task id {nid}.")
+        return redirect(url_for("home"))  # reloads home with updated tasks
+
+    # If user visits /add manually (GET request)
+    return redirect(url_for("create_task"))
+
 
 
 

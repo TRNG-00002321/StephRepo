@@ -5,14 +5,14 @@
     <title>Create Task</title>
 </head>
 <body>
-    <button onclick="window.location='http://localhost:63342/PyCharmPractice/MiniProjects/templates/To-Do.html'">Home</button>
-    <button onclick="window.location='http://localhost:63342/PyCharmPractice/MiniProjects/templates/Create.html'">Create Task</button>
+    <button onclick="window.location='{{url_for('create_screne')}}'" formmethod="POST">Create Task</button>
+    <button onclick="window.location='{{url_for('home')}}'">Home</button>
     <h2>Create a new task for your To-Do List:</h2>
-<form action="http://localhost:5000/create" method="post">
+<form action="{{url_for('add_task')}}" method="post">
     <p>What is the Title of your Task?</p>
     <input type="text" name="title"/><br/>
     <p>Notes:</p>
-    <input type="text" name="notes"/><br/>
+    <input type="text" name="note"/><br/>
     <input type="submit" value="Submit"><br/>
 </form>
 
