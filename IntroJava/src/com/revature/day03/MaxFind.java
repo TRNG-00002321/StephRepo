@@ -9,14 +9,10 @@ public class MaxFind
         int n3 = Integer.parseInt(args[2]);
         int maxResult = n1;
 
-        if(n2 > n1)
+        if(n2 > n1 || n3 > n1)
         {
-            maxResult = n2;
-            if(n3>n2)
-                maxResult = n3;
+            maxResult = Math.max(n3, n2);
         }
-        else if (n3 > n1)
-            maxResult = n3;
 
         System.out.println("Max number is " + maxResult);
     }
