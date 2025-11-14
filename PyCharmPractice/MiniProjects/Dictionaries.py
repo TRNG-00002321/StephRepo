@@ -91,11 +91,20 @@ Name : Ram
 Age : 23
 City : Salem
 Gender : Male'''
+#dictvals = {"Name" : "Ram" , "Age" : 23 , "City" : "Salem", "Gender" : "Male"}
+dictvals = {"a" : 1 , "b" : 2 , "c" : 3, "d" : 4, "e" : 5, "f" : 6, "g" : 7}
 
-dictvals = {"Name" : "Ram" , "Age" : 23 , "City" : "Salem", "Gender" : "Male"}
+word = "this is a sentence"
+result = ""
+for char in word:
+    if char in dictvals:
+        result += str(dictvals[char])
+        continue
+    else:
+        result = result + "?"
+# for item,value in dictvals.items():
+#     print(f"{item}:{value}")
 
-for item,value in dictvals.items():
-    print(f"{item}:{value}")
-
+print(result)
 
 
