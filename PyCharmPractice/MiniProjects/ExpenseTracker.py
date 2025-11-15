@@ -35,7 +35,10 @@ class Expenses:
             return 0
         return last + 1
 
-    def create_expense(self, amount: float, category: str, note: str)->int:
+    def create_expense(self, amount: float, category: str, note: str = "")->int:
+        if amount < 0:
+            amount = 0
+            note = "Amount lower than zero, set to zero"
         row = {
             'id': Expenses.id,
             'date': datetime.date.today(),
@@ -90,7 +93,10 @@ class Expenses:
                         if key == "date":
                             row['date'] = value.isoformat()
                         elif key == "amount":
-                            row['amount'] = f"{float(value):.2f}"
+                            if value < 0:
+                                row['amount'] = 0
+                            else:
+                                row['amount'] = f"{float(value):.2f}"
                         elif key in row:
                             row[key] = value
                     updated = True
@@ -141,7 +147,7 @@ class Expenses:
 if __name__ == "__main__":
     ex = Expenses()                  # uses "expenses.csv"
 
-    id3 = ex.create_expense(50, "Entertainment", "Movie Theatre")
+    id3 = ex.create_expense(50, "Entertainment")
     print("All:", ex.read_expenses())
     print("Total by category:", ex.total_expenses_by_category())
     print("Total all:", ex.total_expenses())

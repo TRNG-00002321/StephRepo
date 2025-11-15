@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="" />
+    <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/MiniProjects/ExpenseTracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProjects/ExpenseTracker.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +15,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -30,16 +33,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.Create.html.executor": "Run",
+    "JavaScript Debug.Home.html.executor": "Run",
+    "JavaScript Debug.To-Do.html.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Dictionaries.executor": "Run",
+    "Python.ExpenseTracker.executor": "Run",
+    "Python.PortfolioPro.executor": "Run",
+    "Python.QuizApp.executor": "Run",
+    "Python.To-DoFlaskified.executor": "Run",
     "Python.To-DoList.executor": "Run",
     "Python.abstractionDemo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice",
+    "last_opened_file_path": "C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/MiniProjects/templates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,6 +63,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Stephenie\Documents\Revature\StephRepo\PyCharmPractice\MiniProjects\templates" />
+      <recent name="C:\Users\Stephenie\Documents\Revature\StephRepo\PyCharmPractice\MiniProjects" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,6 +87,7 @@
       <workItem from="1762529110361" duration="43000" />
       <workItem from="1762535593572" duration="93000" />
       <workItem from="1762783164353" duration="3366000" />
+      <workItem from="1762804846219" duration="36706000" />
     </task>
     <servers />
   </component>
@@ -74,7 +95,12 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PyCharmPractice$To_DoFlaskified.coverage" NAME="To-DoFlaskified Coverage Results" MODIFIED="1763045705139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$abstractionDemo.coverage" NAME="abstractionDemo Coverage Results" MODIFIED="1762783169101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PyCharmPractice$To_DoList.coverage" NAME="To-DoList Coverage Results" MODIFIED="1762786284868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$QuizApp.coverage" NAME="QuizApp Coverage Results" MODIFIED="1763070387557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$PortfolioPro.coverage" NAME="PortfolioPro Coverage Results" MODIFIED="1763070830212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$To_DoList.coverage" NAME="To-DoList Coverage Results" MODIFIED="1762811930533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$Dictionaries.coverage" NAME="Dictionaries Coverage Results" MODIFIED="1763137011947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$ExpenseTracker.coverage" NAME="ExpenseTracker Coverage Results" MODIFIED="1763138110773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
   </component>
 </project>
