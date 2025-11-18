@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MiniProjects/ExpenseTracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProjects/ExpenseTracker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project1/testSQLite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +44,12 @@
     "Python.Dictionaries.executor": "Run",
     "Python.ExpenseTracker.executor": "Run",
     "Python.PortfolioPro.executor": "Run",
+    "Python.PzeroEmployeeManager.executor": "Run",
     "Python.QuizApp.executor": "Run",
     "Python.To-DoFlaskified.executor": "Run",
     "Python.To-DoList.executor": "Run",
     "Python.abstractionDemo.executor": "Run",
+    "Python.testSQLite.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -53,7 +58,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/MiniProjects/templates",
+    "last_opened_file_path": "C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,6 +70,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Stephenie\Documents\Revature\StephRepo\PyCharmPractice\Project1" />
       <recent name="C:\Users\Stephenie\Documents\Revature\StephRepo\PyCharmPractice\MiniProjects\templates" />
       <recent name="C:\Users\Stephenie\Documents\Revature\StephRepo\PyCharmPractice\MiniProjects" />
     </key>
@@ -88,6 +94,7 @@
       <workItem from="1762535593572" duration="93000" />
       <workItem from="1762783164353" duration="3366000" />
       <workItem from="1762804846219" duration="36706000" />
+      <workItem from="1763495214624" duration="5473000" />
     </task>
     <servers />
   </component>
@@ -102,5 +109,7 @@
     <SUITE FILE_PATH="coverage/PyCharmPractice$To_DoList.coverage" NAME="To-DoList Coverage Results" MODIFIED="1762811930533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$Dictionaries.coverage" NAME="Dictionaries Coverage Results" MODIFIED="1763137011947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$ExpenseTracker.coverage" NAME="ExpenseTracker Coverage Results" MODIFIED="1763138110773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$testSQLite.coverage" NAME="testSQLite Coverage Results" MODIFIED="1763498087069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$PzeroEmployeeManager.coverage" NAME="PzeroEmployeeManager Coverage Results" MODIFIED="1763498478616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
   </component>
 </project>
