@@ -43,104 +43,89 @@ class Expenses:
         """Return list of expenses as dicts with parsed types"""
         cursor = self.conn.cursor()
         cursor.execute("SELECT id,amount,description,date FROM expenses ORDER BY id")
+        rows = cursor.fetchall()
         expenses = []
-        with open(self.filename, 'r', newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                try:
-                    parsed = {
-                        'id': int(row['id']),
-                        'date': datetime.datetime.fromisoformat(row['date']),
-                        'amount': float(row['amount']),
-                        'description': row['description'],
-                        'note': row['note']
-                    }
-                except Exception:
-                    # skip malformed rows
-                    continue
-                expenses.append(parsed)
+        for row in rows:
+                expenses.append({
+                    "id": row[0],
+                    "amount": float(row[1]),
+                    "description": row[2],
+                    "date": row[3]
+                })
         return expenses
 
     def get_expense(self, expense_id: int):
-        for expense in self.read_expenses():
-            if expense['id'] == expense_id:
-                return expense
-        return {}
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT * FROM expenses WHERE id = ?", (int(expense_id),))
+        row = cursor.fetchone()
+        if not(row):
+            return None
+        else:
+            return {
+                "id": row[0],
+                "amount": float(row[1]),
+                "description": row[2],
+                "date": row[3]
+            }
 
     def update_expense(self, expense_id: int, **kwargs):
-        updated = False
-        rows = []
-
-        with open(self.filename, 'r', newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-
-            for row in reader:
-                if int(row['id']) == expense_id:
-                    for key, value in kwargs.items():
-                        if key == "date":
-                            row['date'] = value.isoformat()
-                        elif key == "amount":
-                            if value < 0:
-                                row['amount'] = 0
-                            else:
-                                row['amount'] = f"{float(value):.2f}"
-                        elif key in row:
-                            row[key] = value
-                    updated = True
-                rows.append(row)
-
-        with open(self.filename, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=self.fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)
-
-        return updated
+        allowed = {"amount", "description"}
+        updates = []
+        params = []
+        for key, val in kwargs.items():
+            if key not in allowed:
+                continue
+            # if key == "date" and isinstance(val, datetime.date):
+            #     val = val.isoformat()
+            if key == "amount":
+                val = float(val)
+                if val < 0:
+                    val = 0.0
+            updates.append(f"{key} = ?")
+            params.append(val)
+        if not updates:
+            return False
+        updates.append(f"{"date"} = ?")
+        params.append(datetime.datetime.today())
+        params.append(int(expense_id))
+        sql = f"UPDATE expenses SET {', '.join(updates)} WHERE id = ?"
+        cur = self.conn.cursor()
+        cur.execute(sql, params)
+        self.conn.commit()
+        return cur.rowcount > 0
 
     def delete_expense(self, expense_id: int):
-        deleted = False
-        rows = []
-        with open(self.filename, 'r', newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                try:
-                    if int(row['id']) == expense_id:
-                        deleted = True
-                        continue
-                except ValueError:
-                    continue
-                rows.append(row)
-
-        with open(self.filename, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=self.fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)
-
-        return deleted
+        cur = self.conn.cursor()
+        cur.execute("DELETE FROM expenses WHERE id = ?", (int(expense_id),))
+        self.conn.commit()
+        return cur.rowcount > 0
 
 
     def total_expenses(self):
-        return sum(expense['amount'] for expense in self.read_expenses())
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT SUM(amount) FROM expenses")
+        row= cursor.fetchone()
+        return float(row[0]) if row else 0.0
 
     def total_expenses_by_description(self):
-        totals = {}
-        for expense in self.read_expenses():
-            totals.setdefault(expense['description'], 0)
-            totals[expense['description']] += expense['amount']
-
-        return totals
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT description, SUM(amount) FROM expenses GROUP BY description")
+        rows = cursor.fetchall()
+        return {row[0]: float(row[1]) for row in rows}
 
 
 
 if __name__ == "__main__":
-    ex = Expenses()                  # uses "expenses.csv"
-
-    id3 = ex.create_expense(50, "Entertainment")
+    ex = Expenses()                  # uses "expenses.db"
     print("All:", ex.read_expenses())
-    print("Total by description:", ex.total_expenses_by_description())
-    print("Total all:", ex.total_expenses())
-    print("Get ID1:", ex.get_expense(id3))
-    ex.update_expense(id3, amount=52)
-    print("After changes:", ex.read_expenses())
+    cursor = ex.conn.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = cursor.fetchall()
+    print("Tables in the database:")
+    for table in tables:
+        print(table[0])
+    ex.close_db()
+
 
 
 
