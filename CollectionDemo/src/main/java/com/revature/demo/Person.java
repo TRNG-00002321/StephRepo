@@ -8,17 +8,18 @@ public class Person implements Comparable<Person>
     private int id;
     private String name;
     private int age;
+    private int salary;
 
     public Person()
     {
 
     }
 
-    public Person(int id, String name,int age)
+    public Person(int id, String name,int salary)
     {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.salary = salary;
     }
 
     public String getName() {
@@ -29,12 +30,12 @@ public class Person implements Comparable<Person>
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getSalary() {
+        return salary;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     public int getId() {
@@ -50,20 +51,20 @@ public class Person implements Comparable<Person>
     {
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return age == person.age && Objects.equals(name,person.name);
+        return salary == person.salary && Objects.equals(name,person.name);
     }
 
     @Override
     public int hashCode()
     {
-        return Objects.hashCode(age);
+        return Objects.hashCode(salary);
     }
 
     @Override
     public String toString() {
         return "Person{" + "id=" + id +
                 " name='" + name + '\'' +
-                ", age=" + age +
+                ", salary=" + salary +
                 '}';
     }
 
