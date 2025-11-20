@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../P0/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/LogDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/expenses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/expenses.db" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expenses.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mylog.log" beforeDir="false" afterPath="$PROJECT_DIR$/mylog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/expenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,42 +39,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.Create.html.executor": "Run",
-    "JavaScript Debug.Home.html.executor": "Run",
-    "JavaScript Debug.To-Do.html.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Dictionaries.executor": "Run",
-    "Python.ExpenseTracker.executor": "Run",
-    "Python.PortfolioPro.executor": "Run",
-    "Python.PzeroEmployeeManager.executor": "Run",
-    "Python.QuizApp.executor": "Run",
-    "Python.To-DoFlaskified.executor": "Run",
-    "Python.To-DoList.executor": "Run",
-    "Python.abstractionDemo.executor": "Run",
-    "Python.loggingdemo.executor": "Run",
-    "Python.testSQLite.executor": "Run",
-    "Python.user.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.Create.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Home.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.To-Do.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Dictionaries.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ExpenseTracker.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PortfolioPro.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PzeroEmployeeManager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.QuizApp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.To-DoFlaskified.executor&quot;: &quot;Run&quot;,
+    &quot;Python.To-DoList.executor&quot;: &quot;Run&quot;,
+    &quot;Python.abstractionDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loggingdemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testSQLite.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Stephenie\Documents\Revature\StephRepo\PyCharmPractice\Project1" />
@@ -109,6 +103,7 @@
       <workItem from="1762804846219" duration="36706000" />
       <workItem from="1763495214624" duration="9162000" />
       <workItem from="1763588063351" duration="4888000" />
+      <workItem from="1763656252101" duration="2355000" />
     </task>
     <servers />
   </component>

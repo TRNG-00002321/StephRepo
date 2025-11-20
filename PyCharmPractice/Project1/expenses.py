@@ -15,6 +15,7 @@ class Expenses:
         self.conn.execute('''
                 CREATE TABLE IF NOT EXISTS expenses (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL,
                     amount REAL not NULL DEFAULT 0.0,
                     description TEXT,
                     date TEXT not NULL)
@@ -27,7 +28,7 @@ class Expenses:
     def create_expense(self, amount: float, description: str = "")->int:
         if amount < 0.0:
             amount = 0.0
-            if description:
+            if description != "":
                 description = description + " | Amount lower than zero, set to zero"
             else:
                 description = "Amount lower than zero, set to zero"
@@ -40,9 +41,13 @@ class Expenses:
 
 
     def read_expenses(self):
-        """Return list of expenses as dicts with parsed types"""
+        """Return list of expenses as dicts with parsed types under specific user"""
         cursor = self.conn.cursor()
-        cursor.execute("SELECT id,amount,description,date FROM expenses ORDER BY id")
+        cursor.execute("""
+                    SELECT e.id, e.amount, e.description, e.date
+                    FROM expenses e LEFT JOIN users u ON e.user_id = u.id
+                    ORDER BY e.id
+                    """)
         rows = cursor.fetchall()
         expenses = []
         for row in rows:
@@ -75,11 +80,10 @@ class Expenses:
         for key, val in kwargs.items():
             if key not in allowed:
                 continue
-            # if key == "date" and isinstance(val, datetime.date):
-            #     val = val.isoformat()
             if key == "amount":
                 val = float(val)
                 if val < 0:
+                    print("value cannot be negative, set to 0")
                     val = 0.0
             updates.append(f"{key} = ?")
             params.append(val)

@@ -9,8 +9,8 @@ class Users:
     def __init__(self, filename: str = DEFAULT_FILE):
         self.filename = filename
         self.conn = sqlite3.connect(self.filename)
-        self.conn.execute("PRAGMA foreign_keys=OFF") #users don't need foreign key objects
         self._ensure_table()
+        self.current_user = None
 
     def _ensure_table(self):
         self.conn.execute('''
@@ -18,7 +18,7 @@ class Users:
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     username TEXT NOT NULL UNIQUE,
                     password TEXT NOT NULL,
-                    role TEXT not NULL)
+                    role TEXT DEFAULT 'Employee')
                             ''')
         self.conn.commit()
 
@@ -52,11 +52,36 @@ class Users:
         if len(username) == 0:
             print(f"Error: Username '{username}' was not provided.")
             return -1
-        if len(password) <5:
-            print(f"Error: Password '{password}' is too short.")
+        cursor = self.conn.cursor()
+
+        user_entry = cursor.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+        if user_entry is None:
+            print(f"Error: Username '{username}' was not found.")
+            return -1
+
+        uid,uname,upassword,urole = user_entry
+        if upassword != password:
+            print(f"Error: Password '{password}' is incorrect.")
+            return -1
+        self.current_user = {"id": uid, "username": uname, "role": urole}
+        return self.current_user
+
+    def delete_user(self, username: str):
+        if len(username) == 0:
+            print(f"Error: Username '{username}' was not provided.")
             return -1
         cursor = self.conn.cursor()
-        try:
-            username = self.conn.execute("SELECT * FROM users WHERE username = ?", (username)).fetchone()
-            if username is None:
-                log(f"Error: Username '{username}' was not found.")
+        user_entry = cursor.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+        if user_entry is None:
+            print(f"Error: Username '{username}' was not found.")
+            return -1
+        else:
+            cursor.execute("DELETE FROM users WHERE username = ?", (username,)).fetchone()
+            self.conn.commit()
+            print(f"user '{username}' deleted successfully.")
+            return 0
+
+    def logout(self):
+        if self.current_user:
+            print(f"User '{self.current_user["username"]}' logged out.")
+        self.current_user = None
