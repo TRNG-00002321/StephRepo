@@ -1,7 +1,7 @@
 import sqlite3
 
 # 1. Connect to the database
-conn = sqlite3.connect('my_database.db')
+conn = sqlite3.connect('expense.db')
 cursor = conn.cursor()
 
 # 2. Create a table (if it doesn't exist)

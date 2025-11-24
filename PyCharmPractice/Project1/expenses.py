@@ -1,31 +1,44 @@
 import datetime
 import sqlite3
 
-DEFAULT_FILE = "expenses.db"
-
 class Expenses:
-    def __init__(self, filename: str = DEFAULT_FILE):
+    def __init__(self, filename: str = "expense.db"):
         self.filename = filename
         self.conn = sqlite3.connect(self.filename)
         self.conn.execute("PRAGMA foreign_keys=ON") #ties users to expenses made
         self._ensure_table()
+        self.current_user_id = None
 
 
     def _ensure_table(self):
         self.conn.execute('''
                 CREATE TABLE IF NOT EXISTS expenses (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL,
-                    amount REAL not NULL DEFAULT 0.0,
+                    user_id INTEGER NOT NULL,
+                    amount DOUBLE NOT NULL DEFAULT 0.0,
                     description TEXT,
-                    date TEXT not NULL)
+                    clock TEXT NOT NULL,
+                    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE)
+                            ''')
+        self.conn.execute('''
+                CREATE TABLE IF NOT EXISTS approvals (
+                    id Integer PRIMARY KEY AUTOINCREMENT,
+                    expense_id INTEGER NOT NULL,
+                    status Text NOT NULL Default "Pending",
+                    reviewer_id INTEGER,
+                    comment TEXT NOT NULL Default "",
+                    clock TEXT,
+                    FOREIGN KEY(expense_id) REFERENCES expenses(id) ON DELETE CASCADE)
                             ''')
         self.conn.commit()
+
+    def set_current_user(self, user_id: int):
+        self.current_user_id = int(user_id) if user_id is not None else None
 
     def close_db(self):
         self.conn.close()
 
-    def create_expense(self, amount: float, description: str = "")->int:
+    def create_expense(self, amount: float, description: str = ""):
         if amount < 0.0:
             amount = 0.0
             if description != "":
@@ -34,8 +47,12 @@ class Expenses:
                 description = "Amount lower than zero, set to zero"
         cursor = self.conn.cursor()
         cursor.execute("""
-        INSERT INTO expenses (amount, description, date) VALUES (?, ?, ?)""",
-                       (amount, description, datetime.datetime.today()))
+        INSERT INTO expenses (user_id, amount, description, clock) VALUES (?, ?, ?, ?)""",
+                       (self.current_user_id, amount, description, datetime.datetime.today()))
+        self.conn.commit()
+        cursor.execute("""
+                       INSERT INTO approvals (expense_id) VALUES (?,)""",
+                       (cursor.lastrowid,))
         self.conn.commit()
         return cursor.lastrowid #returns last id added
 
@@ -44,10 +61,12 @@ class Expenses:
         """Return list of expenses as dicts with parsed types under specific user"""
         cursor = self.conn.cursor()
         cursor.execute("""
-                    SELECT e.id, e.amount, e.description, e.date
-                    FROM expenses e LEFT JOIN users u ON e.user_id = u.id
-                    ORDER BY e.id
-                    """)
+                    SELECT e.id, e.amount, e.description, e.clock,u.username, a.status, a.comment
+                    FROM expenses e 
+                    LEFT JOIN users u ON e.user_id = u.user_id
+                    LEFT JOIN approvals a ON e.id = a.expense_id
+                    WHERE u.user_id = ? ORDER BY e.id
+                    """, (self.current_user_id,))
         rows = cursor.fetchall()
         expenses = []
         for row in rows:
@@ -55,7 +74,10 @@ class Expenses:
                     "id": row[0],
                     "amount": float(row[1]),
                     "description": row[2],
-                    "date": row[3]
+                    "clock": row[3],
+                    "username": row[4],
+                    "status": row[5],
+                    "comment": row[6]
                 })
         return expenses
 
@@ -70,7 +92,7 @@ class Expenses:
                 "id": row[0],
                 "amount": float(row[1]),
                 "description": row[2],
-                "date": row[3]
+                "clock": row[3]
             }
 
     def update_expense(self, expense_id: int, **kwargs):
@@ -89,7 +111,7 @@ class Expenses:
             params.append(val)
         if not updates:
             return False
-        updates.append(f"{"date"} = ?")
+        updates.append(f"{"clock"} = ?")
         params.append(datetime.datetime.today())
         params.append(int(expense_id))
         sql = f"UPDATE expenses SET {', '.join(updates)} WHERE id = ?"

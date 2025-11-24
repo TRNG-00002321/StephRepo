@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="expenses">
+<dataSource name="my_database">
   <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.53">
     <root id="1">
       <ServerVersion>3.45.1</ServerVersion>
@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-11-21.21:55:03</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-11-24.17:59:20</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1590,510 +1590,46 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="Album"/>
-    <table id="556" parent="191" name="Artist"/>
-    <table id="557" parent="191" name="Customer"/>
-    <table id="558" parent="191" name="Employee"/>
-    <table id="559" parent="191" name="Genre"/>
-    <table id="560" parent="191" name="Invoice"/>
-    <table id="561" parent="191" name="InvoiceLine"/>
-    <table id="562" parent="191" name="MediaType"/>
-    <table id="563" parent="191" name="Playlist"/>
-    <table id="564" parent="191" name="PlaylistTrack"/>
-    <table id="565" parent="191" name="Track"/>
-    <table id="566" parent="191" name="actor"/>
-    <table id="567" parent="191" name="sqlite_master">
+    <table id="555" parent="191" name="products"/>
+    <table id="556" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="568" parent="191" name="sqlite_sequence">
-      <System>1</System>
-    </table>
-    <table id="569" parent="191" name="users"/>
-    <column id="570" parent="555" name="AlbumId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="571" parent="555" name="Title">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>NVARCHAR(160)|0s</StoredType>
-    </column>
-    <column id="572" parent="555" name="ArtistId">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <index id="573" parent="555" name="sqlite_autoindex_Album_1">
-      <ColNames>AlbumId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="574" parent="555" name="IFK_AlbumArtistId">
-      <ColNames>ArtistId</ColNames>
-    </index>
-    <key id="575" parent="555" name="PK_Album">
-      <ColNames>AlbumId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Album_1</UnderlyingIndexName>
-    </key>
-    <column id="576" parent="556" name="ArtistId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="577" parent="556" name="Name">
-      <Position>2</Position>
-      <StoredType>NVARCHAR(120)|0s</StoredType>
-    </column>
-    <index id="578" parent="556" name="sqlite_autoindex_Artist_1">
-      <ColNames>ArtistId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="579" parent="556" name="PK_Artist">
-      <ColNames>ArtistId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Artist_1</UnderlyingIndexName>
-    </key>
-    <column id="580" parent="557" name="CustomerId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="581" parent="557" name="FirstName">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="582" parent="557" name="LastName">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>NVARCHAR(20)|0s</StoredType>
-    </column>
-    <column id="583" parent="557" name="Company">
-      <Position>4</Position>
-      <StoredType>NVARCHAR(80)|0s</StoredType>
-    </column>
-    <column id="584" parent="557" name="Address">
-      <Position>5</Position>
-      <StoredType>NVARCHAR(70)|0s</StoredType>
-    </column>
-    <column id="585" parent="557" name="City">
-      <Position>6</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="586" parent="557" name="State">
-      <Position>7</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="587" parent="557" name="Country">
-      <Position>8</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="588" parent="557" name="PostalCode">
-      <Position>9</Position>
-      <StoredType>NVARCHAR(10)|0s</StoredType>
-    </column>
-    <column id="589" parent="557" name="Phone">
-      <Position>10</Position>
-      <StoredType>NVARCHAR(24)|0s</StoredType>
-    </column>
-    <column id="590" parent="557" name="Fax">
-      <Position>11</Position>
-      <StoredType>NVARCHAR(24)|0s</StoredType>
-    </column>
-    <column id="591" parent="557" name="Email">
-      <NotNull>1</NotNull>
-      <Position>12</Position>
-      <StoredType>NVARCHAR(60)|0s</StoredType>
-    </column>
-    <column id="592" parent="557" name="SupportRepId">
-      <Position>13</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <index id="593" parent="557" name="sqlite_autoindex_Customer_1">
-      <ColNames>CustomerId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="594" parent="557" name="IFK_CustomerSupportRepId">
-      <ColNames>SupportRepId</ColNames>
-    </index>
-    <key id="595" parent="557" name="PK_Customer">
-      <ColNames>CustomerId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Customer_1</UnderlyingIndexName>
-    </key>
-    <column id="596" parent="558" name="EmployeeId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="597" parent="558" name="LastName">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>NVARCHAR(20)|0s</StoredType>
-    </column>
-    <column id="598" parent="558" name="FirstName">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>NVARCHAR(20)|0s</StoredType>
-    </column>
-    <column id="599" parent="558" name="Title">
-      <Position>4</Position>
-      <StoredType>NVARCHAR(30)|0s</StoredType>
-    </column>
-    <column id="600" parent="558" name="ReportsTo">
-      <Position>5</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="601" parent="558" name="BirthDate">
-      <Position>6</Position>
-      <StoredType>DATETIME|0s</StoredType>
-    </column>
-    <column id="602" parent="558" name="HireDate">
-      <Position>7</Position>
-      <StoredType>DATETIME|0s</StoredType>
-    </column>
-    <column id="603" parent="558" name="Address">
-      <Position>8</Position>
-      <StoredType>NVARCHAR(70)|0s</StoredType>
-    </column>
-    <column id="604" parent="558" name="City">
-      <Position>9</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="605" parent="558" name="State">
-      <Position>10</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="606" parent="558" name="Country">
-      <Position>11</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="607" parent="558" name="PostalCode">
-      <Position>12</Position>
-      <StoredType>NVARCHAR(10)|0s</StoredType>
-    </column>
-    <column id="608" parent="558" name="Phone">
-      <Position>13</Position>
-      <StoredType>NVARCHAR(24)|0s</StoredType>
-    </column>
-    <column id="609" parent="558" name="Fax">
-      <Position>14</Position>
-      <StoredType>NVARCHAR(24)|0s</StoredType>
-    </column>
-    <column id="610" parent="558" name="Email">
-      <Position>15</Position>
-      <StoredType>NVARCHAR(60)|0s</StoredType>
-    </column>
-    <index id="611" parent="558" name="sqlite_autoindex_Employee_1">
-      <ColNames>EmployeeId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="612" parent="558" name="IFK_EmployeeReportsTo">
-      <ColNames>ReportsTo</ColNames>
-    </index>
-    <key id="613" parent="558" name="PK_Employee">
-      <ColNames>EmployeeId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Employee_1</UnderlyingIndexName>
-    </key>
-    <column id="614" parent="559" name="GenreId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="615" parent="559" name="Name">
-      <Position>2</Position>
-      <StoredType>NVARCHAR(120)|0s</StoredType>
-    </column>
-    <index id="616" parent="559" name="sqlite_autoindex_Genre_1">
-      <ColNames>GenreId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="617" parent="559" name="PK_Genre">
-      <ColNames>GenreId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Genre_1</UnderlyingIndexName>
-    </key>
-    <column id="618" parent="560" name="InvoiceId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="619" parent="560" name="CustomerId">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="620" parent="560" name="InvoiceDate">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>DATETIME|0s</StoredType>
-    </column>
-    <column id="621" parent="560" name="BillingAddress">
-      <Position>4</Position>
-      <StoredType>NVARCHAR(70)|0s</StoredType>
-    </column>
-    <column id="622" parent="560" name="BillingCity">
-      <Position>5</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="623" parent="560" name="BillingState">
-      <Position>6</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="624" parent="560" name="BillingCountry">
-      <Position>7</Position>
-      <StoredType>NVARCHAR(40)|0s</StoredType>
-    </column>
-    <column id="625" parent="560" name="BillingPostalCode">
-      <Position>8</Position>
-      <StoredType>NVARCHAR(10)|0s</StoredType>
-    </column>
-    <column id="626" parent="560" name="Total">
-      <NotNull>1</NotNull>
-      <Position>9</Position>
-      <StoredType>NUMERIC(10,2)|0s</StoredType>
-    </column>
-    <index id="627" parent="560" name="sqlite_autoindex_Invoice_1">
-      <ColNames>InvoiceId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="628" parent="560" name="IFK_InvoiceCustomerId">
-      <ColNames>CustomerId</ColNames>
-    </index>
-    <key id="629" parent="560" name="PK_Invoice">
-      <ColNames>InvoiceId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Invoice_1</UnderlyingIndexName>
-    </key>
-    <column id="630" parent="561" name="InvoiceLineId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="631" parent="561" name="InvoiceId">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="632" parent="561" name="TrackId">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="633" parent="561" name="UnitPrice">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>NUMERIC(10,2)|0s</StoredType>
-    </column>
-    <column id="634" parent="561" name="Quantity">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <index id="635" parent="561" name="sqlite_autoindex_InvoiceLine_1">
-      <ColNames>InvoiceLineId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="636" parent="561" name="IFK_InvoiceLineInvoiceId">
-      <ColNames>InvoiceId</ColNames>
-    </index>
-    <index id="637" parent="561" name="IFK_InvoiceLineTrackId">
-      <ColNames>TrackId</ColNames>
-    </index>
-    <key id="638" parent="561" name="PK_InvoiceLine">
-      <ColNames>InvoiceLineId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_InvoiceLine_1</UnderlyingIndexName>
-    </key>
-    <column id="639" parent="562" name="MediaTypeId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="640" parent="562" name="Name">
-      <Position>2</Position>
-      <StoredType>NVARCHAR(120)|0s</StoredType>
-    </column>
-    <index id="641" parent="562" name="sqlite_autoindex_MediaType_1">
-      <ColNames>MediaTypeId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="642" parent="562" name="PK_MediaType">
-      <ColNames>MediaTypeId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_MediaType_1</UnderlyingIndexName>
-    </key>
-    <column id="643" parent="563" name="PlaylistId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="644" parent="563" name="Name">
-      <Position>2</Position>
-      <StoredType>NVARCHAR(120)|0s</StoredType>
-    </column>
-    <index id="645" parent="563" name="sqlite_autoindex_Playlist_1">
-      <ColNames>PlaylistId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="646" parent="563" name="PK_Playlist">
-      <ColNames>PlaylistId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Playlist_1</UnderlyingIndexName>
-    </key>
-    <column id="647" parent="564" name="PlaylistId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="648" parent="564" name="TrackId">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <index id="649" parent="564" name="sqlite_autoindex_PlaylistTrack_1">
-      <ColNames>PlaylistId
-TrackId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="650" parent="564" name="IFK_PlaylistTrackPlaylistId">
-      <ColNames>PlaylistId</ColNames>
-    </index>
-    <index id="651" parent="564" name="IFK_PlaylistTrackTrackId">
-      <ColNames>TrackId</ColNames>
-    </index>
-    <key id="652" parent="564" name="PK_PlaylistTrack">
-      <ColNames>PlaylistId
-TrackId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_PlaylistTrack_1</UnderlyingIndexName>
-    </key>
-    <column id="653" parent="565" name="TrackId">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="654" parent="565" name="Name">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>NVARCHAR(200)|0s</StoredType>
-    </column>
-    <column id="655" parent="565" name="AlbumId">
-      <Position>3</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="656" parent="565" name="MediaTypeId">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="657" parent="565" name="GenreId">
-      <Position>5</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="658" parent="565" name="Composer">
-      <Position>6</Position>
-      <StoredType>NVARCHAR(220)|0s</StoredType>
-    </column>
-    <column id="659" parent="565" name="Milliseconds">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="660" parent="565" name="Bytes">
-      <Position>8</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="661" parent="565" name="UnitPrice">
-      <NotNull>1</NotNull>
-      <Position>9</Position>
-      <StoredType>NUMERIC(10,2)|0s</StoredType>
-    </column>
-    <index id="662" parent="565" name="sqlite_autoindex_Track_1">
-      <ColNames>TrackId</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="663" parent="565" name="IFK_TrackAlbumId">
-      <ColNames>AlbumId</ColNames>
-    </index>
-    <index id="664" parent="565" name="IFK_TrackMediaTypeId">
-      <ColNames>MediaTypeId</ColNames>
-    </index>
-    <index id="665" parent="565" name="IFK_TrackGenreId">
-      <ColNames>GenreId</ColNames>
-    </index>
-    <key id="666" parent="565" name="PK_Track">
-      <ColNames>TrackId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Track_1</UnderlyingIndexName>
-    </key>
-    <column id="667" parent="566" name="id">
-      <Position>1</Position>
-    </column>
-    <column id="668" parent="566" name="name">
-      <Position>2</Position>
-    </column>
-    <column id="669" parent="566" name="age">
-      <Position>3</Position>
-    </column>
-    <column id="670" parent="567" name="type">
-      <Position>1</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="671" parent="567" name="name">
-      <Position>2</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="672" parent="567" name="tbl_name">
-      <Position>3</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="673" parent="567" name="rootpage">
-      <Position>4</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="674" parent="567" name="sql">
-      <Position>5</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="675" parent="568" name="name">
-      <Position>1</Position>
-    </column>
-    <column id="676" parent="568" name="seq">
-      <Position>2</Position>
-    </column>
-    <column id="677" parent="569" name="id">
+    <column id="557" parent="555" name="id">
       <Position>1</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="678" parent="569" name="username">
+    <column id="558" parent="555" name="name">
+      <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="679" parent="569" name="password">
+    <column id="559" parent="555" name="price">
       <Position>3</Position>
-      <StoredType>TEXT|0s</StoredType>
+      <StoredType>REAL|0s</StoredType>
     </column>
-    <column id="680" parent="569" name="role">
-      <Position>4</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <key id="681" parent="569">
+    <key id="560" parent="555">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="561" parent="556" name="type">
+      <Position>1</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="562" parent="556" name="name">
+      <Position>2</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="563" parent="556" name="tbl_name">
+      <Position>3</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="564" parent="556" name="rootpage">
+      <Position>4</Position>
+      <StoredType>INT|0s</StoredType>
+    </column>
+    <column id="565" parent="556" name="sql">
+      <Position>5</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
   </database-model>
 </dataSource>

@@ -1,12 +1,7 @@
-import string
-
-from Project1.expenses import DEFAULT_FILE
 import sqlite3
 
-DEFAULT_FILE = DEFAULT_FILE
-
 class Users:
-    def __init__(self, filename: str = DEFAULT_FILE):
+    def __init__(self, filename: str = "expense.db"):
         self.filename = filename
         self.conn = sqlite3.connect(self.filename)
         self._ensure_table()
@@ -15,7 +10,7 @@ class Users:
     def _ensure_table(self):
         self.conn.execute('''
                 CREATE TABLE IF NOT EXISTS users (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
                     username TEXT NOT NULL UNIQUE,
                     password TEXT NOT NULL,
                     role TEXT DEFAULT 'Employee')
@@ -80,6 +75,9 @@ class Users:
             self.conn.commit()
             print(f"user '{username}' deleted successfully.")
             return 0
+
+    def get_current_user(self):
+        return self.current_user
 
     def logout(self):
         if self.current_user:
