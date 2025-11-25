@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/dao/ContactDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/dao/ContactsJDBCImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/demo/jdbcPSDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/demo/jdbcStmt01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/model/Contacts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/service/ContactServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/service/ContactsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JDBCDemo/src/main/java/com/revature/util/ConnectionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/4377117c-309a-45fc-8666-3b82a85acb0b.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/4377117c-309a-45fc-8666-3b82a85acb0b/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/MySQLDemo/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d947198-dedd-4f43-a2cb-d9ad76ccdce0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d947198-dedd-4f43-a2cb-d9ad76ccdce0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QCfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/expenses.db" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expense.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/expenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expenses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/my_database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/testSQLite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/testSQLite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +103,7 @@
       <workItem from="1762804846219" duration="36706000" />
       <workItem from="1763495214624" duration="9162000" />
       <workItem from="1763588063351" duration="4888000" />
-      <workItem from="1763656252101" duration="22608000" />
+      <workItem from="1763656252101" duration="25103000" />
     </task>
     <servers />
   </component>
