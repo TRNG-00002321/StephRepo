@@ -52,7 +52,7 @@ if __name__ == "__main__":
                         print("Bad amount")
                         continue
                     desc = input("Description: ").strip()
-                    expenses.create_expense(amt, desc, cu["id"])
+                    expenses.create_expense(amt, desc)
                 elif c == "2":
                     rows = expenses.read_expenses()
                     if not rows:
@@ -60,7 +60,7 @@ if __name__ == "__main__":
                     else:
                         for r in rows:
                             print(
-                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['clock']} | {r['username'] or 'N/A'}")
+                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['clock']} | {r['username'] or 'N/A'}| {r['status']}| {r['comment'] or 'N/A'}")
                 elif c == "3":
                     eid = input("Expense id: ").strip()
                     if eid.isdigit():

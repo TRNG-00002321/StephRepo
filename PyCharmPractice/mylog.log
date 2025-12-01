@@ -8,3 +8,8 @@
 2025-11-19 16:43:03,270 - root - WARNING - This is a warning message
 2025-11-19 16:43:03,270 - root - ERROR - This is an error message
 2025-11-19 16:43:03,270 - root - CRITICAL - This is a critical message
+2025-11-25 08:47:54,656 - root - DEBUG - This is a debug message
+2025-11-25 08:48:03,714 - root - INFO - This is an info message
+2025-11-25 08:48:05,300 - root - WARNING - This is a warning message
+2025-11-25 08:48:07,328 - root - ERROR - This is an error message
+2025-11-25 08:48:09,146 - root - CRITICAL - This is a critical message
