@@ -1,37 +1,24 @@
 import sqlite3
+from utils.connectionmanager import get_conn
 
 class Users:
-    def __init__(self, filename: str = "expense.db"):
-        self.filename = filename
-        self.conn = sqlite3.connect(self.filename)
-        self._ensure_table()
+    def __init__(self):
         self.current_user = None
 
-    def _ensure_table(self):
-        self.conn.execute('''
-                CREATE TABLE IF NOT EXISTS users (
-                    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    username TEXT NOT NULL UNIQUE,
-                    password TEXT NOT NULL,
-                    role TEXT DEFAULT 'Employee')
-                            ''')
-        self.conn.commit()
-
-    def close_db(self):
-       self.conn.close()
 
     def new_user(self, username: str, password: str, role: str='Employee')->int:
-        if len(username) == 0:
+        if len(username) < 8:
             print(f"Error: Username '{username}' was not provided.")
             return -1
         if len(password) <5:
             print(f"Error: Password '{password}' is too short.")
             return -1
 
-        cursor = self.conn.cursor()
+        conn = get_conn()
+        cursor = conn.cursor()
         try:
-            self.conn.execute("INSERT INTO users (username, password,role) VALUES (?, ?, ?)", (username, password,role))
-            self.conn.commit()
+            cursor.execute("INSERT INTO users (username, password,role) VALUES (%s, %s, %s)", (username, password,role))
+            conn.commit()
             print(f"user '{username}' registered successfully.")
             return cursor.lastrowid #returns last row id added
         except sqlite3.IntegrityError as e:
@@ -47,9 +34,12 @@ class Users:
         if len(username) == 0:
             print(f"Error: Username '{username}' was not provided.")
             return -1
-        cursor = self.conn.cursor()
+        conn = get_conn()
+        cursor = conn.cursor()
 
-        user_entry = cursor.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+        cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
+        user_entry = cursor.fetchone()
+
         if user_entry is None:
             print(f"Error: Username '{username}' was not found.")
             return -1
@@ -65,14 +55,16 @@ class Users:
         if len(username) == 0:
             print(f"Error: Username '{username}' was not provided.")
             return -1
-        cursor = self.conn.cursor()
+
+        conn = get_conn()
+        cursor = conn.cursor()
         user_entry = cursor.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
         if user_entry is None:
             print(f"Error: Username '{username}' was not found.")
             return -1
         else:
             cursor.execute("DELETE FROM users WHERE username = ?", (username,)).fetchone()
-            self.conn.commit()
+            conn.commit()
             print(f"user '{username}' deleted successfully.")
             return 0
 

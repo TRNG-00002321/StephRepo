@@ -5,35 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/ApprovalDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/ExpenseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/ApprovalDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/ExpenseDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/UserDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/Approval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/Expense.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/ApprovalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/ExpenseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefApprovalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefExpenseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/utils/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/utils/DBInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/utils/connectionmanager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project1/utils/dbinitializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P0/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P0/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/demo/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/expense.db" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expense.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/expenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expenses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mylog.log" beforeDir="false" afterPath="$PROJECT_DIR$/mylog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/utils/connectionmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/utils/connectionmanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/utils/dbinitializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/utils/dbinitializer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +108,7 @@
       <workItem from="1762804846219" duration="36706000" />
       <workItem from="1763495214624" duration="9162000" />
       <workItem from="1763588063351" duration="4888000" />
-      <workItem from="1763656252101" duration="36180000" />
+      <workItem from="1763656252101" duration="49235000" />
     </task>
     <servers />
   </component>
@@ -143,13 +121,13 @@
     <SUITE FILE_PATH="coverage/PyCharmPractice$Dictionaries.coverage" NAME="Dictionaries Coverage Results" MODIFIED="1763137011947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$ExpenseTracker.coverage" NAME="ExpenseTracker Coverage Results" MODIFIED="1763138110773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$testSQLite.coverage" NAME="testSQLite Coverage Results" MODIFIED="1763498087069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
-    <SUITE FILE_PATH="coverage/PyCharmPractice$PzeroEmployeeManager.coverage" NAME="PzeroEmployeeManager Coverage Results" MODIFIED="1764610154650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
-    <SUITE FILE_PATH="coverage/PyCharmPractice$expenses.coverage" NAME="expenses Coverage Results" MODIFIED="1764601874216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$PzeroEmployeeManager.coverage" NAME="PzeroEmployeeManager Coverage Results" MODIFIED="1764700982339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$expenses.coverage" NAME="expenses Coverage Results" MODIFIED="1764697560848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$To_DoFlaskified.coverage" NAME="To-DoFlaskified Coverage Results" MODIFIED="1763045705139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$abstractionDemo.coverage" NAME="abstractionDemo Coverage Results" MODIFIED="1762783169101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$PortfolioPro.coverage" NAME="PortfolioPro Coverage Results" MODIFIED="1763070830212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$To_DoList.coverage" NAME="To-DoList Coverage Results" MODIFIED="1762811930533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MiniProjects" />
-    <SUITE FILE_PATH="coverage/PyCharmPractice$user.coverage" NAME="user Coverage Results" MODIFIED="1763590496375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
+    <SUITE FILE_PATH="coverage/PyCharmPractice$user.coverage" NAME="user Coverage Results" MODIFIED="1764692101981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project1" />
     <SUITE FILE_PATH="coverage/PyCharmPractice$loggingdemo.coverage" NAME="loggingdemo Coverage Results" MODIFIED="1763592183134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

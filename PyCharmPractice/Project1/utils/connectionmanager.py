@@ -1,9 +1,15 @@
 import mysql.connector
-from __init__ import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+#from __init__ import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
 
-conn = mysql.connector.connect(
-    pool_name="expense_pool",
-    pool_size=5,
+DB_HOST = "localhost"
+DB_PORT = 3306
+DB_NAME = "expense_manager"
+DB_USER = "root"
+DB_PASSWORD = "manage"
+
+
+def get_conn():
+    return mysql.connector.connect(
     host=DB_HOST,
     port=DB_PORT,
     database=DB_NAME,
@@ -11,6 +17,3 @@ conn = mysql.connector.connect(
     password=DB_PASSWORD,
     autocommit=False
 )
-
-def get_conn():
-    return conn.get_connection()

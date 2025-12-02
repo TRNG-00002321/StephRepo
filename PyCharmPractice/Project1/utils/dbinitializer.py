@@ -13,7 +13,7 @@ def ensure_schema():
             user_id INT NOT NULL,
             amount DECIMAL(12,2) NOT NULL DEFAULT 0.00,
             description TEXT,
-            date DATETIME NOT NULL,
+            clock DATETIME NOT NULL,
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
         )""",
         """CREATE TABLE IF NOT EXISTS approvals (
@@ -29,8 +29,8 @@ def ensure_schema():
     ]
 
     conn = get_conn()
+    cursor = conn.cursor()
     try:
-        cursor = conn.cursor()
         for s in sqls:
             cursor.execute(s)
         conn.commit()

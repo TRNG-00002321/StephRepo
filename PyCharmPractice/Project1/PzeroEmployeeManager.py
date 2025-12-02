@@ -3,12 +3,11 @@ import datetime
 from Project1.user import Users
 from expenses import Expenses
 
-db_path = 'expense.db'
 
 if __name__ == "__main__":
 
-    users = Users(db_path)
-    expenses = Expenses(db_path)
+    users = Users()
+    expenses = Expenses()
 
     try:
         while True:
@@ -26,8 +25,8 @@ if __name__ == "__main__":
                     uname = input("Username: ").strip()
                     pwd = input("Password: ").strip()
                     login = users.login_user(uname, pwd)
-                    if login:
-                        expenses.set_current_user(login["id"])
+                    if login != -1:
+                        expenses.set_current_user(login['id'])
                 elif c == "3":
                     print("Bye.")
                     break
@@ -60,12 +59,14 @@ if __name__ == "__main__":
                     else:
                         for r in rows:
                             print(
-                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['clock']} | {r['username'] or 'N/A'}| {r['status']}| {r['comment'] or 'N/A'}")
+                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['clock']} | {r['username'] or 'N/A'} | {r['status']} | {r['comment'] or 'N/A'}")
                 elif c == "3":
                     eid = input("Expense id: ").strip()
                     if eid.isdigit():
                         e = expenses.get_expense(int(eid))
-                        print(e or "Not found")
+                        if e:
+                            print(f"{e['id']} | {e['amount']:.2f} | {e['description']} | {e['clock']} | {e['username'] or 'N/A'} | {e['status']} | {e['comment'] or 'N/A'}" )
+                        else: print( "Not found")
                     else:
                         print("Enter numeric id")
                 elif c == "4":
@@ -102,7 +103,8 @@ if __name__ == "__main__":
                 else:
                     print("Invalid")
     finally:
-        expenses.close_db()
+        print("db closed")
+
 
     # ex = Expenses()                  # uses "expense.db"
     # us = Users()
