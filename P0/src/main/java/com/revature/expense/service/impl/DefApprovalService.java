@@ -1,13 +1,14 @@
 package com.revature.expense.service.impl;
 
 import com.revature.expense.dao.ApprovalDAO;
+import com.revature.expense.dao.impl.ApprovalDAOImpl;
 import com.revature.expense.model.Approval;
 import com.revature.expense.service.ApprovalService;
 
 public class DefApprovalService implements ApprovalService {
-    private final ApprovalDAO approvalDao;
+    private final ApprovalDAO approvalDao = new ApprovalDAOImpl();
 
-    public DefApprovalService(ApprovalDAO approvalDao) { this.approvalDao = approvalDao; }
+    public DefApprovalService() { }
 
     @Override
     public Approval getApprovalForExpense(int expenseId) throws Exception {

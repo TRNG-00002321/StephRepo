@@ -29,3 +29,12 @@
 2025-12-01 09:56:23,127 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:sqlite:C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1/expenses.db
 2025-12-01 09:56:23,146 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:sqlite:C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1/expenses.db
 2025-12-01 09:56:36,406 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-02 15:14:57,774 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:sqlite:C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1/expenses.db
+2025-12-02 15:14:57,801 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:sqlite:C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1/expenses.db
+2025-12-02 15:20:26,947 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:sqlite:C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1/expenses.db
+2025-12-02 15:20:37,610 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:sqlite:C:/Users/Stephenie/Documents/Revature/StephRepo/PyCharmPractice/Project1/expenses.db
+2025-12-02 15:20:44,407 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-02 15:31:07,210 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:39] - Closed connection
+2025-12-02 15:34:44,907 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:39] - Closed connection
+2025-12-02 15:37:59,649 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-02 15:37:59,677 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection

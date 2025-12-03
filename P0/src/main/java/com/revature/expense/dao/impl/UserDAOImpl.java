@@ -7,13 +7,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
-public class UserDAOImpl implements UserDAO {
+
+public class UserDAOImpl implements UserDAO
+{
     private static final Logger log = LoggerFactory.getLogger(UserDAO.class);
 
     @Override
-    public User findByUsername(String username) throws SQLException {
-        String sql = "SELECT id, username, password, role FROM users WHERE username = ?";
-        try (PreparedStatement ps = ConnectionManager.getConnection().prepareStatement(sql)) {
+    public User findByUsername(String username) throws SQLException
+    {
+        try (PreparedStatement ps = ConnectionManager.getConnection().prepareStatement("" +
+                "SELECT id, username, password, role FROM users WHERE username = %s")) {
             ps.setString(1, username);
 
             try (ResultSet rs = ps.executeQuery()) {
@@ -33,8 +36,10 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public int create(User user) throws SQLException {
-        String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
-        try (PreparedStatement ps = ConnectionManager.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+        try (PreparedStatement ps = ConnectionManager.getConnection().prepareStatement("" +
+                "INSERT INTO users (username, password, role) VALUES (%s, %s, %s)", Statement.RETURN_GENERATED_KEYS))
+        {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getRole());

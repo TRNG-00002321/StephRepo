@@ -15,21 +15,14 @@ public class App {
         try {
             DBInitializer.ensureSchema();
 
-            UserDAO userDao = new UserDAOImpl();
+
             ExpenseDAO expenseDao = new ExpenseDAOImpl();
             ApprovalDAO approvalDao = new ApprovalDAOImpl();
 
-            UserService userService = new DefUserService(userDao);
-            ExpenseService expenseService = new DefExpenseService(expenseDao);
-            ApprovalService approvalService = new DefApprovalService(approvalDao);
+            UserService userService = new DefUserService();
+            ExpenseService expenseService = new DefExpenseService();
+            ApprovalService approvalService = new DefApprovalService();
 
-            // bootstrap admin if missing
-            if (userDao.findByUsername("admin") == null) {
-                int id = userService.register("admin", "admin", "Manager");
-                System.out.println("Created bootstrap admin admin/admin id=" + id);
-            }
-
-            System.out.println();
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Username: ");

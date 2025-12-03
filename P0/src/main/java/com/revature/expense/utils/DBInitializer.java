@@ -25,7 +25,7 @@ public final class DBInitializer
                   user_id INTEGER NOT NULL,
                   amount REAL NOT NULL DEFAULT 0.0,
                   description TEXT,
-                  date TEXT NOT NULL,
+                  clock TEXT NOT NULL,
                   FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
                 );
             """);

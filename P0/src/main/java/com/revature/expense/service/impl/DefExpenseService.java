@@ -1,15 +1,16 @@
 package com.revature.expense.service.impl;
 
 import com.revature.expense.dao.ExpenseDAO;
+import com.revature.expense.dao.impl.ExpenseDAOImpl;
 import com.revature.expense.model.Expense;
 import com.revature.expense.service.ExpenseService;
 
 import java.util.List;
 
 public class DefExpenseService implements ExpenseService {
-    private final ExpenseDAO expenseDao;
+    private final ExpenseDAO expenseDao = new ExpenseDAOImpl();
 
-    public DefExpenseService(ExpenseDAO expenseDao) { this.expenseDao = expenseDao; }
+    public DefExpenseService() { }
 
     @Override
     public int submitExpense(Expense e) throws Exception {
