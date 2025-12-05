@@ -48,6 +48,9 @@ class Users:
         if upassword != password:
             print(f"Error: Password '{password}' is incorrect.")
             return -1
+        if urole != 'Employee':
+            print(f"Error: User '{username}' is not an employee.")
+            return -1
         self.current_user = {"id": uid, "username": uname, "role": urole}
         return self.current_user
 

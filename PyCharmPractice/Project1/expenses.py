@@ -11,21 +11,26 @@ class Expenses:
         self.current_user_id = int(user_id) if user_id is not None else None
 
 
-    def create_expense(self, amount: float, description: str = ""):
+    def create_expense(self, amount: float, description: str = "", comment: str = ""):
         if amount < 0.0:
             amount = 0.0
-            if description != "":
-                description = description + " | Amount lower than zero, set to zero"
+            if comment != "":
+                comment = comment + " | Amount lower than zero, set to zero"
             else:
-                description = "Amount lower than zero, set to zero"
+                comment = "Amount lower than zero, set to zero"
 
+        if description == "":
+            description = "Other"
+
+        if comment == "":
+            comment = "no comment"
 
         conn = get_conn()
         cur = conn.cursor()
         try:
             cur.execute("""
-            INSERT INTO expenses (user_id, amount, description, clock) VALUES (%s, %s, %s, %s)""",
-                           (self.current_user_id, amount, description, datetime.datetime.now()))
+            INSERT INTO expenses (user_id, amount, description, comment, clock) VALUES (%s, %s, %s, %s, %s)""",
+                           (self.current_user_id, amount, description, comment, datetime.datetime.now()))
             conn.commit()
             expense_id = cur.lastrowid
 
@@ -54,11 +59,11 @@ class Expenses:
         cur = conn.cursor()
         try:
             cur.execute("""
-                        SELECT e.id, e.amount, e.description, e.clock,u.username, a.status, a.comment
+                        SELECT e.id, e.amount, e.description, e.comment, e.clock,u.username, a.status
                         FROM expenses e 
                         LEFT JOIN users u ON e.user_id = u.id
                         LEFT JOIN approvals a ON e.id = a.expense_id
-                        WHERE u.id = %s ORDER BY e.id
+                        WHERE u.id = %s AND a.status = 'pending' ORDER BY e.id
                         """, (self.current_user_id,))
             rows = cur.fetchall()
             expenses = []
@@ -67,10 +72,46 @@ class Expenses:
                         "id": row[0],
                         "amount": float(row[1]),
                         "description": row[2],
-                        "clock": row[3].isoformat(),
-                        "username": row[4],
-                        "status": row[5],
-                        "comment": row[6]
+                        "comment": row[3],
+                        "clock": row[4].date().isoformat(),
+                        "username": row[5],
+                        "status": row[6]
+                    })
+            return expenses
+        finally:
+            try:
+                cur.close()
+            except Exception:
+                pass
+            try:
+                conn.close()
+            except Exception:
+                pass
+
+    def read_expense_history(self):
+        """Return list of past expenses as dicts with parsed types under specific user"""
+        conn = get_conn()
+        cur = conn.cursor()
+        try:
+            cur.execute("""
+                        SELECT e.id, e.amount, e.description, a.review_date, e.comment, a.status, a.reviewer, a.comment
+                        FROM expenses e 
+                        LEFT JOIN users u ON e.user_id = u.id
+                        LEFT JOIN approvals a ON e.id = a.expense_id
+                        WHERE u.id = %s AND a.status != 'pending' ORDER BY e.id
+                        """, (self.current_user_id,))
+            rows = cur.fetchall()
+            expenses = []
+            for row in rows:
+                    expenses.append({
+                        "id": row[0],
+                        "amount": float(row[1]),
+                        "description": row[2],
+                        "comment": row[4],
+                        "clock": row[3].date().isoformat(),
+                        "reviewer": row[5],
+                        "status": row[6],
+                        "rev_comment": row[7]
                     })
             return expenses
         finally:
@@ -88,7 +129,7 @@ class Expenses:
         conn = get_conn()
         cur = conn.cursor()
         try:
-            cur.execute("""SELECT e.id, e.user_id, e.amount, e.description, e.clock,u.username, a.status, a.comment
+            cur.execute("""SELECT e.id, e.user_id, e.amount, e.description, e.clock,e.comment, a.status, a.comment
                         FROM expenses e 
                         LEFT JOIN users u ON e.user_id = u.id
                         LEFT JOIN approvals a ON e.id = a.expense_id WHERE e.id = %s""", (int(expense_id),))
@@ -103,8 +144,8 @@ class Expenses:
                         "id": row[0],
                         "amount": float(row[2]),
                         "description": row[3],
-                        "clock": row[4].isoformat(),
                         "username": row[5],
+                        "clock": row[4].date().isoformat(),
                         "status": row[6],
                         "comment": row[7]
                     }
@@ -117,7 +158,7 @@ class Expenses:
         conn = get_conn()
         cur = conn.cursor()
         try:
-            cur.execute("""SELECT e.user_id, a.status
+            cur.execute("""SELECT e.user_id, a.status, e.amount
                         FROM expenses e 
                         LEFT JOIN approvals a ON e.id = a.expense_id
                         WHERE e.id = %s """, (expense_id,))
@@ -131,7 +172,7 @@ class Expenses:
             if row[1] != 'pending':
                 print(f"Error: Expense '{expense_id}' is not pending. Status: '{row[1]}'")
                 return False
-            allowed = {"amount", "description"}
+            allowed = {"amount", "description","comment"}
             updates = []
             params = []
             for key, val in kwargs.items():
@@ -140,8 +181,8 @@ class Expenses:
                 if key == "amount":
                     val = float(val)
                     if val < 0:
-                        print("value cannot be negative, set to 0")
-                        val = 0.0
+                        print("value cannot be negative, value unchanged.")
+                        val = float(row[2])
                 updates.append(f"{key} = %s")
                 params.append(val)
 
@@ -151,9 +192,7 @@ class Expenses:
             updates.append(f"{"clock"} = %s")
             params.append(datetime.datetime.now())
             params.append(int(expense_id))
-            sql = f"UPDATE expenses SET {', '.join(updates)} WHERE id = %s"
-            
-            cur.execute(sql, params)
+            cur.execute(f"UPDATE expenses SET {', '.join(updates)} WHERE id = %s", params)
             conn.commit()
             return cur.rowcount > 0
         except Exception as e:

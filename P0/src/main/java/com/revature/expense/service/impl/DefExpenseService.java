@@ -2,9 +2,14 @@ package com.revature.expense.service.impl;
 
 import com.revature.expense.dao.ExpenseDAO;
 import com.revature.expense.dao.impl.ExpenseDAOImpl;
+import com.revature.expense.model.CategoryTotal;
+import com.revature.expense.model.DateTotal;
+import com.revature.expense.model.EmployeeTotal;
 import com.revature.expense.model.Expense;
 import com.revature.expense.service.ExpenseService;
 
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class DefExpenseService implements ExpenseService {
@@ -12,10 +17,7 @@ public class DefExpenseService implements ExpenseService {
 
     public DefExpenseService() { }
 
-    @Override
-    public int submitExpense(Expense e) throws Exception {
-        return expenseDao.create(e);
-    }
+
 
     @Override
     public Expense getExpense(int id) throws Exception {
@@ -30,5 +32,20 @@ public class DefExpenseService implements ExpenseService {
     @Override
     public List<Expense> listByUser(int userId) throws Exception {
         return expenseDao.findByUser(userId);
+    }
+
+    @Override
+    public List<EmployeeTotal> reportByEmployee() throws SQLException {
+        return expenseDao.reportByEmployee();
+    }
+
+    @Override
+    public List<CategoryTotal> reportByCategory() throws SQLException {
+        return expenseDao.reportByCategory();
+    }
+
+    @Override
+    public List<DateTotal> reportByDateRange(LocalDateTime from, LocalDateTime to) throws SQLException {
+        return expenseDao.reportByDateRange(from, to);
     }
 }

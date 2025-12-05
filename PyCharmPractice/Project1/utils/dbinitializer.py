@@ -1,4 +1,4 @@
-from connectionmanager import get_conn
+from .connectionmanager import get_conn
 
 def ensure_schema():
     sqls = [
@@ -13,6 +13,7 @@ def ensure_schema():
             user_id INT NOT NULL,
             amount DECIMAL(12,2) NOT NULL DEFAULT 0.00,
             description TEXT,
+            comment TEXT,
             clock DATETIME NOT NULL,
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
         )""",

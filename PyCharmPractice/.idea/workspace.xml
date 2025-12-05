@@ -4,16 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="" />
+    <list default="true" id="5c71d11a-12a8-4f00-a70f-3a80f22a52f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/CategoryTotal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/DateTotal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/EmployeeTotal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/utils/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/ExpenseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/ExpenseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/ApprovalDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/ApprovalDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/ExpenseDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/ExpenseDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/dao/impl/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/model/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/ExpenseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefApprovalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefApprovalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/service/impl/DefExpenseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/utils/DBInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P0/src/main/java/com/revature/expense/utils/DBInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d947198-dedd-4f43-a2cb-d9ad76ccdce0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d947198-dedd-4f43-a2cb-d9ad76ccdce0/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/PzeroEmployeeManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/expenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/expenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/utils/dbinitializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/utils/dbinitializer.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseLocalColorSettings">
-    <colors>
-      <entry key="4d947198-dedd-4f43-a2cb-d9ad76ccdce0" value="Green" />
-    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,6 +69,7 @@
     "Python.To-DoList.executor": "Run",
     "Python.__init__.executor": "Run",
     "Python.abstractionDemo.executor": "Run",
+    "Python.dbinitializer.executor": "Run",
     "Python.expenses.executor": "Run",
     "Python.loggingdemo.executor": "Run",
     "Python.testSQLite.executor": "Run",
@@ -82,8 +102,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
-        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
       </set>
     </attachedChunks>
   </component>
@@ -100,7 +119,8 @@
       <workItem from="1762804846219" duration="36706000" />
       <workItem from="1763495214624" duration="9162000" />
       <workItem from="1763588063351" duration="4888000" />
-      <workItem from="1763656252101" duration="50156000" />
+      <workItem from="1763656252101" duration="51125000" />
+      <workItem from="1764773672271" duration="92000" />
     </task>
     <servers />
   </component>

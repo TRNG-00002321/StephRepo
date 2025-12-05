@@ -27,6 +27,6 @@ public final class Expense {
 
     @Override
     public String toString() {
-        return "Expense{id=" + id + ", userId=" + userId + ", amount=" + amount + ", date=" + date + ", desc=" + description + "}";
+        return " " + id + " | " + description + " | " + date + " | " + amount;
     }
 }

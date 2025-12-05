@@ -2,12 +2,14 @@ import datetime
 
 from Project1.user import Users
 from expenses import Expenses
-
+from utils.dbinitializer import ensure_schema
 
 if __name__ == "__main__":
 
+
     users = Users()
     expenses = Expenses()
+    ensure_schema()
 
     try:
         while True:
@@ -37,9 +39,9 @@ if __name__ == "__main__":
                 print(f"\nLogged in as {cu['username']} (role: {cu['role']})")
                 print("1) Create expense")
                 print("2) List expenses")
-                print("3) Get expense")
-                print("4) Update expense")
-                print("5) Delete expense")
+                print("3) Update expense")
+                print("4) Delete expense")
+                print("5) Expense History")
                 print("6) Totals")
                 print("7) Logout")
                 print("8) Quit")
@@ -48,10 +50,11 @@ if __name__ == "__main__":
                     try:
                         amt = float(input("Amount: "))
                     except ValueError:
-                        print("Bad amount")
+                        print("No amount given")
                         continue
                     desc = input("Description: ").strip()
-                    expenses.create_expense(amt, desc)
+                    com = input("Comments: ").strip()
+                    expenses.create_expense(amt, desc,com)
                 elif c == "2":
                     rows = expenses.read_expenses()
                     if not rows:
@@ -59,37 +62,50 @@ if __name__ == "__main__":
                     else:
                         for r in rows:
                             print(
-                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['clock']} | {r['username'] or 'N/A'} | {r['status']} | {r['comment'] or 'N/A'}")
+                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['comment']} | {r['clock']} | {r['username'] or 'N/A'} | {r['status']} ")
                 elif c == "3":
                     eid = input("Expense id: ").strip()
+                    if not eid.isdigit(): print("Numeric id required"); continue
+                    e = expenses.get_expense(int(eid))
+                    if e:
+                        print(
+                            f"{e['id']} | {e['amount']:.2f} | {e['description']} | {e['username'] or 'N/A'} | {e['clock']} | {e['status']} | {e['comment'] or 'N/A'}")
+                        updates = {}
+                        amt = input("New amount (blank to skip): ").strip()
+                        if amt:
+                            try:
+                                updates["amount"] = float(amt)
+                            except:
+                                print("Bad amount"); continue
+                        desc = input("New description (blank skip): ").strip()
+                        if desc: updates["description"] = desc
+                        com = input("New comment (blank skip): ").strip()
+                        if com: updates["comment"] = com
+                        ok = expenses.update_expense(int(eid), **updates)
+                        print("Updated" if ok else "Not updated")
+                    else: print("Not found")
+                elif c == "4":
+                    eid = input("Expense id to delete: ").strip()
                     if eid.isdigit():
                         e = expenses.get_expense(int(eid))
                         if e:
-                            print(f"{e['id']} | {e['amount']:.2f} | {e['description']} | {e['clock']} | {e['username'] or 'N/A'} | {e['status']} | {e['comment'] or 'N/A'}" )
-                        else: print( "Not found")
-                    else:
-                        print("Enter numeric id")
-                elif c == "4":
-                    eid = input("Expense id: ").strip()
-                    if not eid.isdigit(): print("Numeric id required"); continue
-                    updates = {}
-                    amt = input("New amount (blank to skip): ").strip()
-                    if amt:
-                        try:
-                            updates["amount"] = float(amt)
-                        except:
-                            print("Bad amount"); continue
-                    desc = input("New description (blank skip): ").strip()
-                    if desc: updates["description"] = desc
-                    ok = expenses.update_expense(int(eid), **updates)
-                    print("Updated" if ok else "Not updated")
-                elif c == "5":
-                    eid = input("Expense id to delete: ").strip()
-                    if eid.isdigit():
-                        ok = expenses.delete_expense(int(eid))
-                        print("Deleted" if ok else "Not found")
+                            print(
+                                f"{e['id']} | {e['amount']:.2f} | {e['description']} | {e['clock']} | {e['username'] or 'N/A'} | {e['status']} | {e['comment'] or 'N/A'}")
+
+                            ok = expenses.delete_expense(int(eid))
+                            print("Deleted" if ok else "Not found")
+                        else:
+                            print("Not found")
                     else:
                         print("Numeric id required")
+                elif c == "5":
+                    rows = expenses.read_expense_history()
+                    if not rows:
+                        print("No expenses.")
+                    else:
+                        for r in rows:
+                            print(
+                                f"{r['id']} | {r['amount']:.2f} | {r['description']} | {r['comment'] or 'N/A'} | {r['clock']} | {r['reviewer']} | {r['status']} | {r['rev_comment'] or 'N/A'}")
                 elif c == "6":
                     print(f"Total: {expenses.total_expenses():.2f}")
                     desc = expenses.total_expenses_by_description()

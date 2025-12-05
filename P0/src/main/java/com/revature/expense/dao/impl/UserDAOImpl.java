@@ -15,8 +15,9 @@ public class UserDAOImpl implements UserDAO
     @Override
     public User findByUsername(String username) throws SQLException
     {
-        try (PreparedStatement ps = ConnectionManager.getConnection().prepareStatement("" +
-                "SELECT id, username, password, role FROM users WHERE username = %s")) {
+        try (Connection c = ConnectionManager.getConnection();
+             PreparedStatement ps = c.prepareStatement("" +
+                "SELECT id, username, password, role FROM users WHERE username = ?")) {
             ps.setString(1, username);
 
             try (ResultSet rs = ps.executeQuery()) {
@@ -38,7 +39,7 @@ public class UserDAOImpl implements UserDAO
     public int create(User user) throws SQLException {
 
         try (PreparedStatement ps = ConnectionManager.getConnection().prepareStatement("" +
-                "INSERT INTO users (username, password, role) VALUES (%s, %s, %s)", Statement.RETURN_GENERATED_KEYS))
+                "INSERT INTO users (username, password, role) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS))
         {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());

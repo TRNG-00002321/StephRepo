@@ -38,3 +38,72 @@
 2025-12-02 15:34:44,907 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:39] - Closed connection
 2025-12-02 15:37:59,649 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
 2025-12-02 15:37:59,677 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-03 14:50:45,833 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 14:50:45,863 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-03 14:52:58,048 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 14:52:58,088 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-03 14:54:03,187 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 14:54:11,841 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 14:54:11,862 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-03 15:18:37,443 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 15:18:41,387 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-03 15:20:43,338 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 15:20:45,516 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-03 15:22:29,417 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-03 15:22:37,259 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-04 05:23:08,079 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:44:47,345 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:45:00,228 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:45:37,891 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:46:04,773 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:46:04,791 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-04 05:48:08,381 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:48:25,723 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:48:57,983 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:49:02,972 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:51:54,153 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:52:06,265 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:52:09,203 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:55:17,421 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:55:29,708 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 05:55:30,834 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:44:25,046 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:44:34,946 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:44:46,950 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:47:33,657 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:47:43,886 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:47:48,742 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:47:48,759 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-04 06:48:36,701 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:48:50,926 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:48:53,524 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:48:53,537 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
+2025-12-04 06:50:49,810 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:50:59,908 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:51:03,057 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:51:14,110 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 06:51:49,368 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 14:47:43,562 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 14:48:06,283 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 14:48:24,387 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-04 14:51:00,699 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 08:18:44,409 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:14:07,208 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:14:19,364 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:14:22,233 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:15:09,709 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:15:27,111 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:36:26,352 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:36:56,099 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:37:33,758 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:51:19,355 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:51:31,387 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:51:44,450 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:52:10,011 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:52:18,173 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 10:57:16,364 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 11:07:29,214 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 11:07:56,730 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 11:08:15,881 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 11:08:41,798 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:27] - Opened SQLite connection to jdbc:mysql://localhost:3306/expense_manager
+2025-12-05 11:09:03,625 INFO [main] c.r.e.u.ConnectionManager [ConnectionManager.java:36] - Closed connection
