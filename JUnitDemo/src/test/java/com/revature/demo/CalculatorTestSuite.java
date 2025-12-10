@@ -8,10 +8,7 @@ import org.junit.platform.suite.api.*;
 @SuiteDisplayName("Calculator Test Suite")
 // Selects the specific classes to include in this suite
 @SelectClasses({
-        AddTest.class,
-        SubTest.class,
-        MultTest.class,
-        DivTest.class,
+        CalculatorTest.class,
         CalcParamTest.class,
         StringUtilsTest.class,
         ExceptionTesting.class

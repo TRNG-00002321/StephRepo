@@ -13,7 +13,16 @@ public class Calculator
         return (a * b);
     }
     public int div(int a, int b){
-        if (b == 0) throw new IllegalArgumentException("Cannot divide by zero.");
+        if (b == 0) throw new ArithmeticException("Cannot divide by zero.");
         return a / b;
     }
+
+    public boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+    public boolean isPositive(int number) {
+        return number > 0;
+    }
+
 }
