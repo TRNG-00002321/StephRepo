@@ -13,7 +13,8 @@ import org.junit.platform.suite.api.*;
         MultTest.class,
         DivTest.class,
         CalcParamTest.class,
-        StringUtilsTest.class
+        StringUtilsTest.class,
+        ExceptionTesting.class
 })
 public class CalculatorTestSuite {
     // This class remains empty; it is purely a container for the annotations
