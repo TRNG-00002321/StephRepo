@@ -1,7 +1,10 @@
 package com.revature.users.service;
 
+import com.revature.users.dao.UserNotFoundException;
 import com.revature.users.dao.UserRepository;
 import com.revature.users.model.User;
+
+import java.util.Objects;
 
 public class UserService
 {
@@ -11,8 +14,12 @@ public class UserService
         this.ur = ur;
     }
 
-    public User getUserById(Long id){
-        return ur.findById(id);
+    public User getUser(Long id){
+        User u = ur.findById(id);
+        if(u == null) {
+            throw new UserNotFoundException("User not found.");
+        }
+        return u;
     }
 
     public User getUserByEmail(String email){
@@ -21,8 +28,14 @@ public class UserService
 
     public boolean register(User user){
         if(ur.findByEmail(user.getEmail()) != null) return false;
-
         ur.save(user);
         return true;
+    }
+
+    public boolean existsByEmail(String email)
+    {
+        if(ur.findByEmail(email) != null) return true;
+
+        return false;
     }
 }

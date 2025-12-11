@@ -1,6 +1,8 @@
 package com.revature.users;
 
+import com.revature.users.dao.EmailClient;
 import com.revature.users.dao.UserRepository;
+import com.revature.users.dao.UserNotFoundException;
 import com.revature.users.model.User;
 import com.revature.users.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +13,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -19,6 +23,9 @@ public class UserServiceTest
 {
     @Mock // creates the mocked UserRepository
     private UserRepository ur;
+
+    @Mock
+    private EmailClient ec;
 
     @InjectMocks //injects UserRepo into userService
     private UserService us;
@@ -35,46 +42,62 @@ public class UserServiceTest
     }
 
     @Test
-    public void testUserById_Pos(){
-        //Stub - Arrange
+    void getUser_existingUser_returnsUser() {
+        // Arrange: Configure the mock
+        User eUser = new User(2L, "John", "joe@email.org");
+        eUser.setId(1L);
+
         when(ur.findById(1L)).thenReturn(eUser);
 
-        //Act
-        User fUser = us.getUserById(1L);
+        // Act: Call the method under test
+        User actualUser = us.getUser(1L);
 
-        //Assert
-        assertEquals("Bob",fUser.getName());
-
-        //Mock
-        verify(ur,times(1)).findById(1L);
-
-
+        // Assert: Verify the result
+        assertEquals(eUser, actualUser);
+        assertEquals("John", actualUser.getName());
     }
 
     @Test
-    public void testUserById_NotFound(){
-        //Stub - Arrange
-        when(ur.findById(1L)).thenReturn(null);
+    void getUser_nonExistentUser_throwsException() {
+        // Arrange: Mock returns empty Optional
+        when(ur.findById(999L)).thenReturn(null);
 
-        //Act
-        User fUser = us.getUserById(1L);
-
-        //Assert
-        assertNull(fUser);
-
-        //Mock
-        verify(ur,times(1)).findById(1L);
-
-
+        // Act & Assert
+        assertThrows(UserNotFoundException.class, () -> {
+            us.getUser(999L);
+        });
     }
-    @Test
+
+    @Test  //create user happy path
     public void testUserRegister_Pos(){
 
-        //Act
-        us.register(nUser);
+        //Arrange
+        when(us.existsByEmail(nUser.getEmail())).thenReturn(false);
+        when(ur.save(nUser)).thenReturn(nUser);
 
+        //Act
+        nUser.setId(2L);
+
+        assertFalse(us.existsByEmail(nUser.getEmail()));
+        assertEquals(2L,ur.save(nUser).getId());
         //Mock
         verify(ur,times(1)).save(nUser);
+
+
+    }
+
+    @Test  //create user duplicate path
+    public void testUserRegister_Duplicate(){
+
+        // Arrange
+        when(us.register(eUser)).thenReturn(false);
+        //Act
+        boolean regUser = us.register(eUser);
+
+        //Assert
+        assertFalse(regUser);
+        //Mock
+        verify(ur,times(1)).save(eUser);
 
 
     }
@@ -96,5 +119,7 @@ public class UserServiceTest
 
 
     }
+
+
 
 }
