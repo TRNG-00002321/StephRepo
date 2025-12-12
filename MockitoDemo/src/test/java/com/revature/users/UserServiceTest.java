@@ -121,5 +121,11 @@ public class UserServiceTest
     }
 
 
+    @Test
+    public void testEmailClient()
+    {
+        when(ec.send("your mom","howdy","Meowdy Pardner")).thenReturn(true);
+        verify(ec, times(1)).send("your mom","howdy","Meowdy Pardner");
+    }
 
 }
