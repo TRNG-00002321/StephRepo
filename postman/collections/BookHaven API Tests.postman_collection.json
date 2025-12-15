@@ -1,0 +1,169 @@
+{
+  "info": {
+    "_postman_id": "67ad4c42-1291-4f08-97dc-e584314b5b8d",
+    "name": "BookHaven API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Posts",
+      "id": "853e5626-1fbf-48d4-a468-5e8f3a9a34ee",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BookHaven}}/posts",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts"
+          ]
+        },
+        "description": "1. Every object has a UserId, Id, Title, and Body.\n    \n2. 100 items were returned, starting at 0 and ending at 99.\n    \n3. Headers are: Host, User-Agent, Accept, Accept-Encoding, and Connection."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Post by Id",
+      "id": "e9ef5608-5865-439b-b188-054d3348930c",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BookHaven}}/posts/999",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts",
+            "999"
+          ]
+        },
+        "description": "If Ids out of bounds then nothing is returned and the status code is 404 Not Found."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Posts by User",
+      "id": "f50efa52-1243-43fa-aaff-4b18466b95c6",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BookHaven}}/posts?userId=1",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Post",
+      "id": "06392b11-b843-4284-85b1-2af305498d0b",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"API Testing is Essential\",\r\n    \"body\": \"Every QA engineer should master API testing as it provides fast, reliable validation of backend services.\",\r\n    \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BookHaven}}/posts",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts"
+          ]
+        },
+        "description": "1. The id assigned is 101\n    \n2. 201 represents a successful creation of an object, while 200 represents a success in general."
+      },
+      "response": []
+    },
+    {
+      "name": "Update post",
+      "id": "f1dbffcc-9478-4470-8ccc-43dfd45cf3c2",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Updated Title - API Testing\",\r\n    \"body\": \"This post has been updated via PUT request\",\r\n    \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BookHaven}}/posts/1",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Post",
+      "id": "eb975b2e-0b61-447e-b103-8dceea9ce6da",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Updated Title - API Testing\",\r\n    \"body\": \"This post has been updated via PUT request\",\r\n    \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{BookHaven}}/posts/1",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

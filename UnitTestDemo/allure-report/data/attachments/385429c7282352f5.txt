@@ -1,0 +1,3 @@
+Connecting to database
+Using database connection simulated_DB_connection
+Disconnecting from database

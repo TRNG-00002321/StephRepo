@@ -39,3 +39,6 @@ class TestCalculator(unittest.TestCase):
 
     def tearDown(self):
         self.calculator = None
+
+if __name__ == '__main__':
+    unittest.main()
