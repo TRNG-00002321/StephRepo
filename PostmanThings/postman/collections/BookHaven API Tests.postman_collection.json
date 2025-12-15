@@ -26,18 +26,61 @@
     },
     {
       "name": "Get Post by Id",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "57897cc0-db76-4e2c-925a-e11415a07ab0",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "cfd24ddd-31a9-4b7c-b274-af83a5d2204d",
+            "exec": [
+              "// Test 1: Status code is 200\r",
+              "pm.test(\"Status code is 200\", function() {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "// Test 2: Status code is in success range\r",
+              "pm.test(\"Status code is success (2xx)\", function() {\r",
+              "    pm.expect(pm.response.code).to.be.within(200, 299);\r",
+              "});\r",
+              "\r",
+              "// Test 3: Status text\r",
+              "pm.test(\"Status message is OK\", function() {\r",
+              "    pm.response.to.have.status(\"OK\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Status code is not 404\", function() {\r",
+              "    pm.expect(pm.response.code).to.not.equal(404);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "id": "e9ef5608-5865-439b-b188-054d3348930c",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{BookHaven}}/posts/999",
+          "raw": "{{BookHaven}}/posts/1",
           "host": [
             "{{BookHaven}}"
           ],
           "path": [
             "posts",
-            "999"
+            "1"
           ]
         },
         "description": "If Ids out of bounds then nothing is returned and the status code is 404 Not Found."
@@ -160,6 +203,74 @@
           "path": [
             "posts",
             "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Post Not Found",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "671fd5ca-70c4-481d-a602-a610c00d7930",
+            "exec": [
+              "// Test 1: Status code is 200\r",
+              "pm.test(\"Status code is 404\", function() {\r",
+              "    pm.response.to.have.status(404);\r",
+              "});\r",
+              "// Test 3: Status text\r",
+              "pm.test(\"Status message is Not Found\", function() {\r",
+              "    pm.response.to.have.status(\"Not Found\");\r",
+              "});\r",
+              "// Test 4: Response time\r",
+              "pm.test(\"Response time is less than 200ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+              "});\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "ea112ed2-0178-4728-887a-33a67f447f37",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "29caa6df-7a22-48dd-a542-6af011077d9f",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Updated Title - API Testing\",\r\n    \"body\": \"This post has been updated via PUT request\",\r\n    \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{BookHaven}}/posts/999",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "posts",
+            "999"
           ]
         }
       },
