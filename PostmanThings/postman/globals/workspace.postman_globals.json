@@ -1,7 +1,16 @@
 {
   "id": "781e20aa-a005-4d0a-a14c-e72b79652efa",
   "name": "Globals",
-  "values": [],
+  "values": [
+    {
+      "key": "BookHaven",
+      "value": "",
+      "enabled": true,
+      "type": "default",
+      "description": ""
+    }
+  ],
   "_postman_variable_scope": "globals",
-  "_postman_exported_at": "2025-12-15T21:12:22.935Z"
+  "_postman_exported_at": "2025-12-16T15:16:50.417Z",
+  "_postman_exported_using": "Postman/11.0.0"
 }
