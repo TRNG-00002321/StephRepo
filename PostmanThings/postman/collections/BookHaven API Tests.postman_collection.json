@@ -364,7 +364,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "",
+          "raw": "{\r\n    \"title\": \"Test Post {{$randomLoremWords}}\",\r\n    \"body\": \"{{$randomLoremParagraph}}\",\r\n    \"userId\": {{$randomInt}}\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -571,6 +571,33 @@
           ],
           "path": [
             "invalid"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register New User",
+      "id": "e33d80ca-e4a2-4c15-959c-e9318bf48e75",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"{{$randomFullName}}\",\r\n        \"username\": \"Bret\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"address\": {\r\n            \"street\": \"Kulas Light\",\r\n            \"suite\": \"Apt. 556\",\r\n            \"city\": \"Gwenborough\",\r\n            \"zipcode\": \"92998-3874\",\r\n            \"geo\": {\r\n                \"lat\": \"-37.3159\",\r\n                \"lng\": \"81.1496\"\r\n            }\r\n        },\r\n        \"phone\": \"1-770-736-8031 x56442\",\r\n        \"website\": \"hildegard.org\",\r\n        \"company\": {\r\n            \"name\": \"Romaguera-Crona\",\r\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n            \"bs\": \"harness real-time e-markets\"\r\n        }\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BookHaven}}/users",
+          "host": [
+            "{{BookHaven}}"
+          ],
+          "path": [
+            "users"
           ]
         }
       },
