@@ -1,142 +1,89 @@
 package com.revature.cucumber.steps;
 
+import io.cucumber.java.en.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import com.revature.cucumber.context.TestContext;
+import com.revature.cucumber.pages.LoginPage;
+import com.revature.cucumber.pages.SecurePage;
 
 public class LoginSteps {
 
-    private WebDriver driver;
-    private static final String LOGIN_URL =
-            "https://the-internet.herokuapp.com/login";
+    private TestContext context;
+    private LoginPage loginPage;
+    private SecurePage securePage;
 
-    // ---------- Hooks ----------
-
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    public LoginSteps() {
+        context = TestContext.getInstance();
     }
 
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
+    private LoginPage getLoginPage() {
+        return context.getLoginPage();
     }
 
-    // ---------- Background Steps ----------
-
-    @Given("the application is running")
-    public void the_application_is_running() {
-        driver.get(LOGIN_URL);
-        assertTrue(driver.getTitle().contains("The Internet"));
-
+    private SecurePage getSecurePage() {
+        return context.getSecurePage();
     }
-
-    @And("the test database is seeded with users")
-    public void the_test_database_is_seeded_with_users() {
-        // No-op for demo application
-        // Exists for readability and future extensibility
-        System.out.println("the test database is seeded with users");
-    }
-
-    @And("the test database is already seeded with users")
-    public void the_test_database_is_already_seeded_with_users() {
-        System.out.println("the test database is already seeded with users");
-    }
-
-    // ---------- Scenario Steps ----------
 
     @Given("the user is on the login page")
-    public void the_user_is_on_the_login_page() {
-        driver.get(LOGIN_URL);
+    public void theUserIsOnTheLoginPage() {
+        getLoginPage().navigateToLogin();
     }
 
     @When("the user enters username {string}")
-    public void the_user_enters_username(String username) {
-        driver.findElement(By.id("username")).clear();
-        driver.findElement(By.id("username")).sendKeys(username);
+    public void theUserEntersUsername(String username) {
+        getLoginPage().enterUsername(username);
+        context.setCurrentUser(username);
     }
 
-    @And("the user enters password {string}")
-    public void the_user_enters_password(String password) {
-        driver.findElement(By.id("password")).clear();
-        driver.findElement(By.id("password")).sendKeys(password);
+    @When("the user enters password {string}")
+    public void theUserEntersPassword(String password) {
+        getLoginPage().enterPassword(password);
     }
 
-    @And("the user clicks the login button")
-    public void the_user_clicks_the_login_button() {
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
+    @When("the user clicks the login button")
+    public void theUserClicksTheLoginButton() {
+        getLoginPage().clickLogin();
+    }
+
+    @When("the user logs in with username {string} and password {string}")
+    public void theUserLogsIn(String username, String password) {
+        getLoginPage().login(username, password);
+        context.setCurrentUser(username);
     }
 
     @Then("the user should be redirected to the secure area")
-    public void the_user_should_be_redirected_to_the_secure_area() {
-        assertTrue(driver.getCurrentUrl().contains("/secure"));
+    public void theUserShouldBeRedirectedToSecureArea() {
+        assertTrue(context.getDriver().getCurrentUrl().contains("/secure"),
+                "User was not redirected to secure area");
     }
 
-    @Then("the the page should display a message containing {string}")
-    public void the_the_page_should_display_a_message_containing(String expectedSubstring) {
-        String flashMessage = driver.findElement(By.id("flash")).getText();
-        assertTrue(flashMessage.contains(expectedSubstring));
+    @Then("the user should see a success message containing {string}")
+    public void theUserShouldSeeSuccessMessage(String expectedMessage) {
+        String actualMessage = getLoginPage().getFlashMessage();
+        assertTrue(actualMessage.contains(expectedMessage),
+                "Expected message containing '" + expectedMessage + "' but got '" + actualMessage + "'");
     }
 
-    // ---------- Outcome Validation ----------
-
-    @Then("the {string} should be displayed")
-    public void the_expected_result_should_be_displayed(String expectedResult) {
-        String flashMessage =
-                driver.findElement(By.id("flash")).getText();
-
-        switch (expectedResult.toLowerCase()) {
-            case "success message":
-                assertTrue(
-                        flashMessage.contains("You logged into a secure area!")
-                );
-                break;
-
-            case "error message":
-                assertTrue(
-                        flashMessage.contains("Your username is invalid")
-                                || flashMessage.contains("Your password is invalid")
-                );
-                break;
-
-            default:
-                throw new IllegalArgumentException(
-                        "Unknown expected_result: " + expectedResult
-                );
-        }
+    @Then("the user should remain on the login page")
+    public void theUserShouldRemainOnLoginPage() {
+        assertTrue(getLoginPage().isOnLoginPage(),
+                "User should remain on login page");
     }
 
-    @And("the user should be on the {string} page")
-    public void the_user_should_be_on_the_expected_page(String expectedPage) {
+    @Then("the user should see an error message containing {string}")
+    public void theUserShouldSeeErrorMessage(String expectedMessage) {
+        String actualMessage = getLoginPage().getFlashMessage();
+        assertTrue(actualMessage.contains(expectedMessage),
+                "Expected error message containing '" + expectedMessage + "'");
+    }
 
-        switch (expectedPage.toLowerCase()) {
-            case "secure":
-                assertTrue(driver.getCurrentUrl().contains("/secure"));
-                break;
-
-            case "login":
-                assertTrue(driver.getCurrentUrl().contains("/login"));
-                break;
-
-            default:
-                throw new IllegalArgumentException(
-                        "Unknown expected_page: " + expectedPage
-                );
+    @Then("the login should be {string}")
+    public void theLoginShouldBe(String expectedResult) {
+        if (expectedResult.equalsIgnoreCase("success")) {
+            assertFalse(getLoginPage().isOnLoginPage());
+        } else {
+            assertTrue(getLoginPage().isOnLoginPage());
         }
     }
 }
